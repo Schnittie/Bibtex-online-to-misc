@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class onlineToMisc {
     public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Incorrect number of arguments");
-            return;
-        }
-        String online = args[0];
+        Scanner scanner = new Scanner(System.in).useDelimiter("\\A");
+        System.out.println("Give me the @online annotated bib:");
+        String userInput = scanner.next();
+        reformat(userInput);
+    }
+
+    private static void reformat(String online) {
         try {
             String[] onlineSegments = online.split("url");
             String misc = "@misc" + onlineSegments[0].substring(7) + "howpublished = {\\url{" +
@@ -14,6 +18,5 @@ public class onlineToMisc {
         } catch (Exception e) {
             System.out.println("Incorrectly formatted String");
         }
-
     }
 }
