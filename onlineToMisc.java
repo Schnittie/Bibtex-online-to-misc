@@ -5,7 +5,7 @@ public class onlineToMisc {
         Scanner scanner = new Scanner(System.in).useDelimiter("\\A");
         System.out.println("Give me the @online annotated bib:");
         String userInput = scanner.next();
-        reformat(userInput);
+        reformat(userInput.trim());
     }
 
     private static void reformat(String online) {
